@@ -3,276 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rahul Bainsla is a software engineer, builder, and Virginia Tech computer science student." />
-    <title>Rahul Bainsla - Software Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <meta name="description" content="Rahul Bainsla - software engineer and Virginia Tech computer science student." />
+    <title>Rahul Bainsla</title>
     <style>
-      :root {
-        --ink: #1d1c1a;
-        --muted: #6f6b65;
-        --paper: #f7f4ed;
-        --warm-white: #fffcf6;
-        --accent: #e84e2b;
-        --accent-dark: #bd381e;
-        --line: #dcd7ce;
-        --yellow: #ffd84d;
-        --blue: #e7eef8;
-        --max: 1120px;
-      }
-
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        background: var(--warm-white);
-        color: var(--ink);
-        font-family: "DM Sans", Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-      }
-      a { color: inherit; text-decoration: none; }
-      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-      .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
-      .eyebrow, .section-label, .meta, .nav a, .tag, .footer-note { font-family: "DM Mono", monospace; }
-
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: rgba(255, 252, 246, .9);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(220, 215, 206, .76);
-      }
-      .nav__inner { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-      .mark { display: inline-grid; place-items: center; width: 36px; height: 36px; background: var(--ink); color: var(--yellow); border-radius: 50%; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; font-style: italic; }
-      .nav__brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.03em; }
-      .nav__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: clamp(12px, 2.2vw, 28px); }
-      .nav a:not(.nav__brand) { color: var(--muted); font-size: 12px; text-transform: lowercase; transition: color .2s ease; }
-      .nav a:not(.nav__brand):hover { color: var(--accent); }
-
-      .hero { padding: 88px 0 76px; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--line); }
-      .hero__grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); gap: 54px; align-items: end; }
-      .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--accent); font-size: 12px; letter-spacing: .02em; }
-      .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-      h1, h2, h3, p { margin-top: 0; }
-      h1 { max-width: 780px; margin-bottom: 24px; font-size: clamp(54px, 8.1vw, 106px); line-height: .88; letter-spacing: -.075em; font-weight: 600; }
-      h1 em { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; letter-spacing: -.055em; }
-      .hero__intro { max-width: 650px; margin-bottom: 30px; color: #46433f; font-size: clamp(18px, 2.1vw, 23px); line-height: 1.42; letter-spacing: -.025em; }
-      .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
-      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 10px 17px; border: 1px solid var(--ink); border-radius: 999px; font-weight: 600; font-size: 14px; transition: transform .2s ease, background .2s ease, color .2s ease; }
-      .button:hover { transform: translateY(-2px); }
-      .button--solid { background: var(--ink); color: white; }
-      .button--solid:hover { background: var(--accent); border-color: var(--accent); }
-      .button--plain:hover { background: var(--yellow); }
-      .hero__card { position: relative; min-height: 328px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; background: var(--accent); color: #fffaf2; border-radius: 22px; transform: rotate(2.5deg); box-shadow: 8px 9px 0 var(--ink); }
-      .hero__card::after { content: "RB"; position: absolute; right: 16px; bottom: -20px; color: rgba(255, 216, 77, .9); font-family: "Instrument Serif", Georgia, serif; font-size: 150px; font-style: italic; line-height: .7; letter-spacing: -.13em; }
-      .hero__card p { position: relative; z-index: 1; max-width: 200px; margin: 0; font-family: "DM Mono", monospace; font-size: 12px; line-height: 1.55; }
-      .hero__card strong { position: relative; z-index: 1; max-width: 210px; font-family: "Instrument Serif", Georgia, serif; font-size: 38px; font-weight: 400; line-height: .92; }
-
-      section { padding: 92px 0; border-bottom: 1px solid var(--line); }
-      .section-head { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 24px; margin-bottom: 40px; }
-      .section-label { padding-top: 10px; color: var(--accent); font-size: 12px; text-transform: lowercase; }
-      h2 { max-width: 820px; font-size: clamp(42px, 5.4vw, 70px); line-height: .93; letter-spacing: -.065em; font-weight: 600; }
-      h2 em { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
-      .section-copy { max-width: 650px; margin: 18px 0 0; color: var(--muted); font-size: 18px; }
-
-      .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-      .project { grid-column: span 6; min-height: 330px; padding: 28px; display: flex; flex-direction: column; border: 1px solid var(--ink); border-radius: 16px; background: #fffdf8; transition: transform .22s ease, box-shadow .22s ease; }
-      .project:hover { transform: translate(-4px, -4px); box-shadow: 7px 7px 0 var(--ink); }
-      .project--wide { grid-column: span 7; background: var(--blue); }
-      .project--short { grid-column: span 5; background: #fff2dd; }
-      .project__top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
-      .project__number { font-family: "Instrument Serif", Georgia, serif; color: var(--accent); font-size: 40px; line-height: .7; font-style: italic; }
-      .tag { display: inline-block; padding: 5px 8px; border: 1px solid currentColor; border-radius: 999px; color: #57524c; font-size: 10px; text-transform: uppercase; letter-spacing: .025em; }
-      h3 { margin: auto 0 10px; font-size: clamp(28px, 3vw, 40px); line-height: .97; letter-spacing: -.055em; }
-      .project p { max-width: 520px; margin-bottom: 18px; color: #4f4b46; }
-      .project__stack { color: var(--muted); font-family: "DM Mono", monospace; font-size: 11px; line-height: 1.55; }
-
-      .experience { display: grid; gap: 0; border-top: 1px solid var(--ink); }
-      .role { display: grid; grid-template-columns: 180px minmax(150px, .7fr) minmax(0, 1.65fr); gap: 22px; padding: 27px 0; border-bottom: 1px solid var(--line); }
-      .role__date { color: var(--muted); font-size: 12px; }
-      .role h3 { margin: 0; font-size: 21px; line-height: 1.05; }
-      .role h3 span { display: block; margin-top: 7px; color: var(--accent); font-family: "DM Mono", monospace; font-size: 11px; font-weight: 400; letter-spacing: .01em; }
-      .role p { max-width: 640px; margin: 0; color: #514d47; }
-
-      .about { background: var(--ink); color: var(--warm-white); }
-      .about .section-label { color: var(--yellow); }
-      .about h2 { max-width: 900px; }
-      .about .section-copy { color: #c8c3ba; }
-      .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 54px; margin-top: 54px; }
-      .about-statement { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(31px, 4vw, 53px); line-height: .98; letter-spacing: -.045em; }
-      .skills { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 9px; }
-      .skills span { padding: 8px 10px; border: 1px solid #77716a; border-radius: 999px; color: #f0ebe4; font-family: "DM Mono", monospace; font-size: 11px; }
-
-      .contact { background: var(--yellow); }
-      .contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
-      .contact h2 { max-width: 690px; font-size: clamp(52px, 7vw, 91px); }
-      .contact p { max-width: 580px; margin: 18px 0 0; color: #524919; font-size: 18px; }
-      .contact-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-      .contact-links a { padding-bottom: 2px; border-bottom: 1px solid var(--ink); font-family: "DM Mono", monospace; font-size: 13px; }
-      .contact-links a:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
-
-      footer { padding: 26px 0; background: var(--ink); color: #bdb7ae; }
-      .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-      .footer-note { font-size: 11px; }
-
-      @media (max-width: 760px) {
-        .wrap { width: min(calc(100% - 32px), var(--max)); }
-        .nav__links { display: none; }
-        .hero { padding: 68px 0 62px; }
-        .hero__grid, .section-head, .about-grid, .contact-inner { grid-template-columns: 1fr; }
-        .hero__grid { gap: 52px; }
-        .hero__card { max-width: 300px; min-height: 255px; margin-left: 10px; }
-        section { padding: 68px 0; }
-        .section-head { gap: 8px; }
-        .project, .project--wide, .project--short { grid-column: span 12; min-height: 280px; }
-        .role { grid-template-columns: 1fr; gap: 10px; }
-        .role p { padding-top: 4px; }
-        .contact-links { margin-top: 4px; }
+      body { margin: 0; color: #000; background: #fff; font-family: "Times New Roman", Times, serif; font-size: 16px; line-height: 1.6; }
+      a { color: inherit; }
+      .container { display: flex; width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding-top: 40px; }
+      nav { flex: 0 0 150px; display: flex; flex-direction: column; gap: 5px; }
+      nav a { padding: 2px 0; color: #737373; text-decoration: none; }
+      nav a:first-child { color: #000; }
+      nav a:hover, nav a:focus-visible { color: #000; text-decoration: underline; }
+      main { min-width: 0; flex: 1; padding-left: 60px; }
+      h1 { margin: 0 0 12px; font-size: 24px; font-weight: 500; line-height: 1.6; }
+      h2 { margin: 36px 0 12px; font-size: 24px; font-weight: 500; line-height: 1.6; }
+      h3 { margin: 28px 0 9px; font-size: 18.72px; font-weight: 500; line-height: 1.6; }
+      p { margin: 16px 0; }
+      ul { margin: 16px 0; padding-left: 40px; }
+      li { margin: 2px 0; }
+      .muted { color: #737373; }
+      .project { margin: 28px 0; }
+      .project h3 { margin-bottom: 0; }
+      .project p { margin-top: 5px; }
+      footer { padding: 36px 0 40px; color: #737373; }
+      @media (max-width: 720px) {
+        .container { display: block; width: min(100% - 32px, 640px); padding-top: 24px; }
+        nav { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 32px; }
+        main { padding-left: 0; }
+        h2 { margin-top: 30px; }
       }
     </style>
   </head>
   <body>
-    <header class="nav">
-      <div class="wrap nav__inner">
-        <a class="nav__brand" href="#top" aria-label="Rahul Bainsla home"><span class="mark">R</span><span>Rahul Bainsla</span></a>
-        <nav class="nav__links" aria-label="Primary navigation">
-          <a href="#work">work</a>
-          <a href="#experience">experience</a>
-          <a href="#about">about</a>
-          <a href="#contact">contact</a>
-        </nav>
-      </div>
-    </header>
+    <div class="container">
+      <nav aria-label="Primary navigation">
+        <a href="#home">home</a>
+        <a href="#work">work</a>
+        <a href="#projects">projects</a>
+        <a href="#experience">experience</a>
+        <a href="/Rahul_Bainsla_SWE.pdf">resume</a>
+        <a href="https://github.com/Rahul-sch" target="_blank" rel="noreferrer">github</a>
+        <a href="https://www.linkedin.com/in/rahul-bainsla/" target="_blank" rel="noreferrer">linkedin</a>
+      </nav>
 
-    <main id="top">
-      <section class="hero">
-        <div class="wrap hero__grid">
-          <div>
-            <div class="eyebrow">software engineer / builder</div>
-            <h1>I build <em>useful</em> systems for complicated problems.</h1>
-            <p class="hero__intro">I’m Rahul, a Virginia Tech CS student and software engineer working across applied AI, developer tools, distributed systems, and product-minded infrastructure.</p>
-            <div class="button-row">
-              <a class="button button--solid" href="#work">See my work</a>
-              <a class="button button--plain" href="/Rahul_Bainsla_SWE.pdf">Resume</a>
-              <a class="button button--plain" href="mailto:rahul.bainsla2005@gmail.com">Get in touch</a>
-            </div>
-          </div>
-          <aside class="hero__card" aria-label="Rahul's focus areas">
-            <p>based in Virginia<br />building for people who need things to work.</p>
-            <strong>AI + systems + real-world impact</strong>
-          </aside>
-        </div>
-      </section>
+      <main id="home">
+        <h1>Rahul Bainsla</h1>
+        <p>I’m a software engineer, builder, and computer science student.</p>
+        <p>currently at Virginia Tech studying computer science, graduating in May 2027.</p>
+        <p>@ the intersection of applied AI, developer tooling, distributed systems, and application security. building practical systems that are reliable, secure, and useful.</p>
+        <p>writing software, solving hard problems, and learning from people who care about building things well.</p>
 
-      <section id="work">
-        <div class="wrap">
-          <div class="section-head">
-            <div class="section-label">01 / selected work</div>
-            <div>
-              <h2>Things I’ve built <em>and care about.</em></h2>
-              <p class="section-copy">I gravitate toward technical work where a thoughtful implementation makes someone’s day substantially easier.</p>
-            </div>
-          </div>
-          <div class="project-grid">
-            <article class="project">
-              <div class="project__top"><span class="project__number">01</span><span class="tag">Developer tooling</span></div>
-              <h3>RepoWhisper</h3>
-              <p>A private macOS developer tool that uses voice-controlled semantic search to make large local codebases easier to understand and navigate.</p>
-              <div class="project__stack">SwiftUI / FastAPI / PyTorch / Faster-Whisper / LanceDB</div>
-            </article>
-            <article class="project">
-              <div class="project__top"><span class="project__number">02</span><span class="tag">Application security</span></div>
-              <h3>VibeGuard</h3>
-              <p>A zero-config static-analysis CLI for AI-generated code, with 64 detection rules, automated fixes, SARIF reporting, and CI integration.</p>
-              <div class="project__stack">TypeScript / Node.js / Vitest / SARIF / GitHub Actions</div>
-            </article>
-            <article class="project project--wide">
-              <div class="project__top"><span class="project__number">03</span><span class="tag">Medical robotics</span></div>
-              <h3>MedRa Robotics</h3>
-              <p>Co-founding a medical robotics platform designed to reduce clinicians’ occupational radiation exposure during hospital procedures - connecting robotics control, computer vision, and clinical requirements into a working system.</p>
-              <div class="project__stack">Robotics / computer vision / hardware-software integration / clinical systems</div>
-            </article>
-            <article class="project project--short">
-              <div class="project__top"><span class="project__number">04</span><span class="tag">Distributed systems</span></div>
-              <h3>Kafka telemetry</h3>
-              <p>Built a real-time anomaly-detection pipeline with audit-grade delivery guarantees for sensor telemetry.</p>
-              <div class="project__stack">Kafka / Isolation Forest / LSTM / PostgreSQL</div>
-            </article>
-          </div>
-        </div>
-      </section>
+        <h3>Experience highlights</h3>
+        <ul>
+          <li>Co-Founder &amp; CTO at MedRa Robotics, developing a medical robotics platform to reduce clinicians’ radiation exposure.</li>
+          <li>AI Intern at Virginia Information Technologies Agency (VITA), evaluating responsible small-language-model adoption for public-sector workflows.</li>
+          <li>Software Engineer Intern at Ithena, building real-time Kafka telemetry and anomaly-detection systems.</li>
+        </ul>
 
-      <section id="experience">
-        <div class="wrap">
-          <div class="section-head">
-            <div class="section-label">02 / experience</div>
-            <div>
-              <h2>Learning by building <em>in the real world.</em></h2>
-              <p class="section-copy">A mix of public-sector AI, production data systems, startup work, and computer science.</p>
-            </div>
-          </div>
-          <div class="experience">
-            <article class="role">
-              <div class="role__date meta">Jun 2026 - Aug 2026</div>
-              <h3>AI Intern<span>VITA / Richmond, VA</span></h3>
-              <p>Evaluated small language model integration options for public-sector workflows, documented responsible AI adoption, and tested the Ask Codey chatbot ahead of production launch.</p>
-            </article>
-            <article class="role">
-              <div class="role__date meta">Jan 2026 - Feb 2026</div>
-              <h3>Software Engineer Intern<span>Ithena / Glen Allen, VA</span></h3>
-              <p>Architected a real-time Kafka telemetry pipeline using Isolation Forest and LSTM models, with exactly-once delivery and idempotent writes for reliable, auditable data processing.</p>
-            </article>
-            <article class="role">
-              <div class="role__date meta">Oct 2025 - present</div>
-              <h3>Co-Founder &amp; CTO<span>MedRa Robotics / San Francisco, CA</span></h3>
-              <p>Leading software engineering across robotics control, computer vision, and hardware-software integration while taking a medical robotics product toward a hospital pilot and manufacturing scale-up.</p>
-            </article>
-            <article class="role">
-              <div class="role__date meta">Aug 2023 - May 2027</div>
-              <h3>B.S. Computer Science<span>Virginia Tech / Blacksburg, VA</span></h3>
-              <p>Studying computer science while building production systems and experimenting with practical applications of AI, security, and developer experience.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+        <section id="work">
+          <h2>Current Focus</h2>
+          <p>Building <strong>MedRa Robotics</strong> - a medical robotics platform focused on reducing clinicians’ occupational radiation exposure during hospital procedures. I lead software engineering across robotics control, computer vision, and hardware-software integration.</p>
+          <p>Designing secure, local-first developer tools that make it faster to understand and work inside large codebases.</p>
+          <p>Exploring applied AI systems that have strong testing, clear governance, and a real path to dependable production use.</p>
+        </section>
 
-      <section class="about" id="about">
-        <div class="wrap">
-          <div class="section-head">
-            <div class="section-label">03 / about</div>
-            <div>
-              <h2>Curious about hard problems. <em>Serious about the details.</em></h2>
-              <p class="section-copy">I enjoy turning loose requirements into calm, reliable experiences - from the data layer all the way to the interface.</p>
-            </div>
-          </div>
-          <div class="about-grid">
-            <p class="about-statement">The work I’m proudest of sits where systems thinking, practical AI, security, and genuine user needs meet.</p>
-            <div class="skills" aria-label="Technical skills">
-              <span>Python</span><span>TypeScript</span><span>Swift</span><span>SQL</span><span>FastAPI</span><span>Next.js</span><span>React</span><span>SwiftUI</span><span>Kafka</span><span>PostgreSQL</span><span>Supabase</span><span>Redis</span><span>LangGraph</span><span>GitHub Actions</span><span>PyTorch</span><span>Application security</span>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section id="projects">
+          <h2>Projects</h2>
 
-      <section class="contact" id="contact">
-        <div class="wrap contact-inner">
-          <div>
-            <div class="section-label">04 / contact</div>
-            <h2>Let’s make something <em>useful.</em></h2>
-            <p>I’m interested in ambitious software engineering and AI work. If you think we should talk, I’d love to hear from you.</p>
-          </div>
-          <div class="contact-links">
-            <a href="mailto:rahul.bainsla2005@gmail.com">rahul.bainsla2005@gmail.com</a>
-            <a href="https://www.linkedin.com/in/rahul-bainsla/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://github.com/Rahul-sch" target="_blank" rel="noreferrer">GitHub ↗</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer><div class="wrap footer-inner"><span class="footer-note">© 2026 Rahul Bainsla</span><span class="footer-note">built with care in Virginia</span></div></footer>
+          <article class="project">
+            <h3>RepoWhisper</h3>
+            <p>A private macOS developer tool for voice-controlled semantic code search. Built with SwiftUI, FastAPI, Faster-Whisper, PyTorch, and LanceDB, with a local-first architecture, per-install authentication, and repository allowlists.</p>
+          </article>
+
+          <article class="project">
+            <h3>VibeGuard</h3>
+            <p>A zero-config static-analysis CLI for AI-generated code. It scans for secrets, injection, cryptography, web, cloud, and infrastructure vulnerabilities, with SARIF/JSON reports, automated fixes, and GitHub Actions integration.</p>
+          </article>
+
+          <article class="project">
+            <h3>Kafka telemetry pipeline</h3>
+            <p>A real-time anomaly-detection pipeline integrating Isolation Forest and LSTM models. The system uses exactly-once delivery, idempotent writes, and manual offset management to preserve audit-grade data integrity.</p>
+          </article>
+        </section>
+
+        <section id="experience">
+          <h2>Education &amp; Skills</h2>
+          <p>B.S. in Computer Science, Virginia Tech <span class="muted">(Aug. 2023 - May 2027)</span></p>
+          <p>Python, TypeScript, Swift, SQL, JavaScript, Bash, FastAPI, Next.js, React, Node.js, SwiftUI, LangGraph, Kafka, PostgreSQL, Supabase, LanceDB, Redis, GitHub Actions, PyTorch, and application security.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Interested in working together? Email me at <a href="mailto:rahul.bainsla2005@gmail.com">rahul.bainsla2005@gmail.com</a>.</p>
+        </section>
+
+        <footer>© 2026 Rahul Bainsla</footer>
+      </main>
+    </div>
   </body>
 </html>
